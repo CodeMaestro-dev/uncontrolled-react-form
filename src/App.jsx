@@ -13,8 +13,10 @@ function App() {
   const PHONE_NUMBER = useRef(null);
 
   function HANDLE_SUBMIT(e) {
+    const REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
     e.preventDefault();
-    setShow(false)
+    setShow(false);
     if (
       !FIRST_NAME.current.value ||
       !LAST_NAME.current.value ||
@@ -23,16 +25,19 @@ function App() {
     ) {
       setShow(true);
       return setError("Please fill out all fields");
+    } else if (!EMAIL.current.value.match(REGEX)) {
+      setShow(true)
+      return setError("Please fill in a correct email")
     } else {
-      setSuccess(true)
+      setSuccess(true);
       console.log(FIRST_NAME.current.value);
       console.log(LAST_NAME.current.value);
       console.log(EMAIL.current.value);
       console.log(PHONE_NUMBER.current.value);
 
-      setTimeout (()=> {
+      setTimeout(() => {
         window.location.reload();
-      }, 2000)
+      }, 2000);
     }
   }
 
