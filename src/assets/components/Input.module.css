@@ -1,0 +1,10 @@
+.inputDiv {
+    
+  & > .input {
+    border: none;
+    border-radius: 8px;
+    padding: 18px 15px;
+    width: 340px;
+    background-color: #333333;
+  }
+}

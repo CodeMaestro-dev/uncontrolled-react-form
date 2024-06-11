@@ -1,0 +1,28 @@
+.mainDiv {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    margin-top: 180px;
+
+    & > form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      & > input {
+        cursor: pointer;
+        border: none;
+        border-radius: 8px;
+        padding: 18px 15px;
+        width: 340px;
+        background-color: #333333;
+        color: white;
+        width: 100%;
+      }
+    }
+  }
+}
